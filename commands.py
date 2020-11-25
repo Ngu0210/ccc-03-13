@@ -19,10 +19,11 @@ def seed_db():
     from faker import Faker
     faker = Faker()
 
-    for i in range(20):
+    for i in range(5):
         book = Book()
         book.title = faker.catch_phrase()
         db.session.add(book)
+        print(f"{i} book record(s) created")
     
     db.session.commit()
     print("Tables seeded")
